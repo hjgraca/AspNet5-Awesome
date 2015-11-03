@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24627.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1D7DE0A6-5F0A-4CB0-AA75-8D7CBDB49215}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1A2001A1-65BF-40E4-914A-03531AFB88D3}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+		NuGet.Config = NuGet.Config
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AspNet5-Awesome", "src\AspNet5-Awesome\AspNet5-Awesome.xproj", "{462B6C2B-D39E-4DE6-A959-A99E509019C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{29CA6C9C-EC43-49FA-90C2-275594B51860}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{CB907E29-883B-48AC-9529-98B4C0167B21}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1 = PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{9AD6D6F7-F406-42FB-BA15-9CBDB7554D19}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\AspNet5-Awesome.json = PublishScripts\Templates\AspNet5-Awesome.json
+		PublishScripts\Templates\AspNet5-Awesome.param.dev.json = PublishScripts\Templates\AspNet5-Awesome.param.dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{462B6C2B-D39E-4DE6-A959-A99E509019C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{462B6C2B-D39E-4DE6-A959-A99E509019C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{462B6C2B-D39E-4DE6-A959-A99E509019C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{462B6C2B-D39E-4DE6-A959-A99E509019C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{462B6C2B-D39E-4DE6-A959-A99E509019C2} = {1D7DE0A6-5F0A-4CB0-AA75-8D7CBDB49215}
+		{CB907E29-883B-48AC-9529-98B4C0167B21} = {29CA6C9C-EC43-49FA-90C2-275594B51860}
+		{9AD6D6F7-F406-42FB-BA15-9CBDB7554D19} = {29CA6C9C-EC43-49FA-90C2-275594B51860}
+	EndGlobalSection
+EndGlobal
