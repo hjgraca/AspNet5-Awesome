@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Security.Claims;
+using AspNet5_Awesome.Data.DbContext;
 using Microsoft.AspNet.Authorization;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Mvc;
-using AspNet5_Awesome.Models;
 using AspNet5_Awesome.Services;
 using AspNet5_Awesome.ViewModels.Manage;
 

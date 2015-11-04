@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Data.Entity;
 
-namespace AspNet5_Awesome.Models
+namespace AspNet5_Awesome.Data.DbContext
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

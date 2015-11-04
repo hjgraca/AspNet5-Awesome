@@ -1,23 +1,69 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Infrastructure;
 using Microsoft.Data.Entity.Metadata;
 using Microsoft.Data.Entity.Migrations;
-using AspNet5_Awesome.Models;
+using AspNet5_Awesome.Data.DbContext;
 
-namespace AspNet5_Awesome.Migrations
+namespace AspNet5Awesome.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20151104175606_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .Annotation("ProductVersion", "7.0.0-beta8")
+                .Annotation("ProductVersion", "7.0.0-beta8-15964")
                 .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("AspNet5_Awesome.Data.DbContext.ApplicationUser", b =>
+                {
+                    b.Property<string>("Id");
+
+                    b.Property<int>("AccessFailedCount");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken();
+
+                    b.Property<string>("Email")
+                        .Annotation("MaxLength", 256);
+
+                    b.Property<bool>("EmailConfirmed");
+
+                    b.Property<bool>("LockoutEnabled");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd");
+
+                    b.Property<string>("NormalizedEmail")
+                        .Annotation("MaxLength", 256);
+
+                    b.Property<string>("NormalizedUserName")
+                        .Annotation("MaxLength", 256);
+
+                    b.Property<string>("PasswordHash");
+
+                    b.Property<string>("PhoneNumber");
+
+                    b.Property<bool>("PhoneNumberConfirmed");
+
+                    b.Property<string>("SecurityStamp");
+
+                    b.Property<bool>("TwoFactorEnabled");
+
+                    b.Property<string>("UserName")
+                        .Annotation("MaxLength", 256);
+
+                    b.HasKey("Id");
+
+                    b.Index("NormalizedEmail")
+                        .Annotation("Relational:Name", "EmailIndex");
+
+                    b.Index("NormalizedUserName")
+                        .Annotation("Relational:Name", "UserNameIndex");
+
+                    b.Annotation("Relational:TableName", "AspNetUsers");
+                });
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRole", b =>
                 {
@@ -98,54 +144,6 @@ namespace AspNet5_Awesome.Migrations
                     b.Annotation("Relational:TableName", "AspNetUserRoles");
                 });
 
-            modelBuilder.Entity("AspNet5_Awesome.Models.ApplicationUser", b =>
-                {
-                    b.Property<string>("Id");
-
-                    b.Property<int>("AccessFailedCount");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken();
-
-                    b.Property<string>("Email")
-                        .Annotation("MaxLength", 256);
-
-                    b.Property<bool>("EmailConfirmed");
-
-                    b.Property<bool>("LockoutEnabled");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd");
-
-                    b.Property<string>("NormalizedEmail")
-                        .Annotation("MaxLength", 256);
-
-                    b.Property<string>("NormalizedUserName")
-                        .Annotation("MaxLength", 256);
-
-                    b.Property<string>("PasswordHash");
-
-                    b.Property<string>("PhoneNumber");
-
-                    b.Property<bool>("PhoneNumberConfirmed");
-
-                    b.Property<string>("SecurityStamp");
-
-                    b.Property<bool>("TwoFactorEnabled");
-
-                    b.Property<string>("UserName")
-                        .Annotation("MaxLength", 256);
-
-                    b.HasKey("Id");
-
-                    b.Index("NormalizedEmail")
-                        .Annotation("Relational:Name", "EmailIndex");
-
-                    b.Index("NormalizedUserName")
-                        .Annotation("Relational:Name", "UserNameIndex");
-
-                    b.Annotation("Relational:TableName", "AspNetUsers");
-                });
-
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNet.Identity.EntityFramework.IdentityRole")
@@ -155,14 +153,14 @@ namespace AspNet5_Awesome.Migrations
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("AspNet5_Awesome.Models.ApplicationUser")
+                    b.HasOne("AspNet5_Awesome.Data.DbContext.ApplicationUser")
                         .WithMany()
                         .ForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("AspNet5_Awesome.Models.ApplicationUser")
+                    b.HasOne("AspNet5_Awesome.Data.DbContext.ApplicationUser")
                         .WithMany()
                         .ForeignKey("UserId");
                 });
@@ -173,7 +171,7 @@ namespace AspNet5_Awesome.Migrations
                         .WithMany()
                         .ForeignKey("RoleId");
 
-                    b.HasOne("AspNet5_Awesome.Models.ApplicationUser")
+                    b.HasOne("AspNet5_Awesome.Data.DbContext.ApplicationUser")
                         .WithMany()
                         .ForeignKey("UserId");
                 });

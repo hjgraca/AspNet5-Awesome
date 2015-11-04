@@ -1,9 +1,10 @@
-﻿{
+{
   "webroot": "wwwroot",
   "userSecretsId": "aspnet5-AspNet5_Awesome-4c36ae71-ef1f-435c-8eee-fda4ed38501a",
   "version": "1.0.0-*",
 
   "dependencies": {
+    "AspNet5-Awesome.Data": "1.0.0-*",
     "EntityFramework.Commands": "7.0.0-beta8",
     "EntityFramework.SqlServer": "7.0.0-beta8",
     "Microsoft.ApplicationInsights.AspNet": "1.0.0-beta8",
@@ -26,7 +27,7 @@
     "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta8",
     "Microsoft.Framework.Logging": "1.0.0-beta8",
     "Microsoft.Framework.Logging.Console": "1.0.0-beta8",
-    "Microsoft.Framework.Logging.Debug" : "1.0.0-beta8",
+    "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta8"
   },
 
