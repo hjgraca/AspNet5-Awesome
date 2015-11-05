@@ -7,6 +7,7 @@
     "AspNet5-Awesome.Data": "1.0.0-*",
     "EntityFramework.Commands": "7.0.0-beta8",
     "EntityFramework.SqlServer": "7.0.0-beta8",
+    "EntityFramework.SQLite": "7.0.0-beta8",
     "Microsoft.ApplicationInsights.AspNet": "1.0.0-beta8",
     "Microsoft.AspNet.Authentication.Cookies": "1.0.0-beta8",
     "Microsoft.AspNet.Authentication.Facebook": "1.0.0-beta8",
@@ -37,7 +38,6 @@
   },
 
   "frameworks": {
-    "dnx451": { },
     "dnxcore50": { }
   },
 

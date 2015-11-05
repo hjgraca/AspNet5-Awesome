@@ -54,10 +54,14 @@ namespace AspNet5_Awesome
             services.AddApplicationInsightsTelemetry(Configuration);
 
             // Add Entity Framework services to the services container.
+            //  services.AddEntityFramework()
+            //      .AddSqlServer()
+            //      .AddDbContext<ApplicationDbContext>(options =>
+            //          options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
+            
             services.AddEntityFramework()
-                .AddSqlServer()
-                .AddDbContext<ApplicationDbContext>(options =>
-                    options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
+                .AddSqlite()
+                .AddDbContext<ApplicationDbContext>(options => options.UseSqlite(Configuration["Data:DefaultConnection:SqliteConnectionString"]));
 
             // Add Identity services to the services container.
             services.AddIdentity<ApplicationUser, IdentityRole>()
