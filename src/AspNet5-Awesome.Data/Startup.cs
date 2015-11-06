@@ -16,8 +16,9 @@ namespace AspNet5Awesome.Data
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(appEnv.ApplicationBasePath)
-                .AddJsonFile("appsettings.json");
-    
+                .AddJsonFile("appsettings.json")
+                .AddEnvironmentVariables();
+
             Configuration = builder.Build();
         }
     
@@ -27,7 +28,7 @@ namespace AspNet5Awesome.Data
             //      .AddSqlServer()
             //      .AddDbContext<ApplicationDbContext>(options =>
             //          options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
-            
+
             services.AddEntityFramework()
                 .AddSqlite()
                 .AddDbContext<ApplicationDbContext>(options => options.UseSqlite(Configuration["Data:DefaultConnection:SqliteConnectionString"]));
