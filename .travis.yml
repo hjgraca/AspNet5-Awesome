@@ -5,15 +5,10 @@ mono:
 env:
   global:
     - DNX_VERSION=1.0.0-beta8
-  
 install:
-  - sudo add-apt-repository -y ppa:yjwong/libunwind
-  - sudo apt-get -y update
-  - sudo apt-get install libunwind8 libssl-dev unzip
-    
   - curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.sh
-  - dnvm install $DNX_VERSION -r coreclr
-  #- dnvm use $DNX_VERSION -r coreclr
+  - sudo apt-get install libunwind8 gettext libssl-dev libcurl3-dev zlib1g libicu-dev
+  - dnvm upgrade -r coreclr  
   - dnu restore
 script:
   - dnx AspNet5-Awesome/test/AspNet5-Awesome.Tests/project.json test
