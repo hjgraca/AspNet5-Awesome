@@ -59,13 +59,21 @@ namespace AspNet5_Awesome
             //      .AddDbContext<ApplicationDbContext>(options =>
             //          options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
             
+            
+            
             services.AddEntityFramework()
                 .AddSqlite()
-                .AddDbContext<ApplicationDbContext>(options => options.UseSqlite(Configuration["Data:DefaultConnection:SqliteConnectionString"]));
+                .AddDbContext<ApplicationDbContext>(options => 
+                options.UseSqlite(Configuration["Data:DefaultConnection:SqliteConnectionString"]));
 
             // Add Identity services to the services container.
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+            services.AddIdentity<ApplicationUser, IdentityRole>(options => {
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonLetterOrDigit = false;
+                
+            }).AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
             // Add MVC services to the services container.
