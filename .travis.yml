@@ -6,4 +6,4 @@ install:
   - dnvm upgrade
   - dnu restore
 script:
-  - dnx /home/travis/build/hjgraca/AspNet5-Awesome/test/project.json test -parallel none
+  - dnx /home/travis/build/hjgraca/AspNet5-Awesome/test/AspNet5-Awesome.Tests/project.json test -parallel none
