@@ -1,14 +1,14 @@
 language: CSharp
-sudo: required
+#sudo: required
 mono:
   - latest
+os: osx
 install:
-  - sudo add-apt-repository -y ppa:yjwong/libunwind
-  - sudo apt-get -y update
-  - sudo apt-get install libunwind8 libssl-dev unzip
+  #- sudo add-apt-repository -y ppa:yjwong/libunwind
+  #- sudo apt-get -y update
+  #- sudo apt-get install libunwind8 libssl-dev unzip
   - curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.sh
-  - dnvm install latest -r coreclr
-  - dnvm install latest -r mono  
+  - dnvm upgrade -r coreclr  
   - dnu restore
 script:
   - dnx /home/travis/build/hjgraca/AspNet5-Awesome/test/AspNet5-Awesome.Tests/project.json test
