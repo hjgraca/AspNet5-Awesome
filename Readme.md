@@ -1,0 +1,1 @@
+Travis: [![Build Status](https://travis-ci.org/hjgraca/AspNet5-Awesome.svg?branch=master)](https://travis-ci.org/hjgraca/AspNet5-Awesome)
