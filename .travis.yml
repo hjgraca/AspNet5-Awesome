@@ -1,12 +1,12 @@
 language: CSharp
-sudo: false
+#sudo: required
 mono:
   - latest
 install:
   - curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.sh
-  - sudo add-apt-repository -y ppa:yjwong/libunwind
-  - sudo apt-get -y update
-  - sudo apt-get install libunwind8 libssl-dev unzip  
+  - add-apt-repository -y ppa:yjwong/libunwind
+  - apt-get -y update
+  - apt-get install libunwind8 libssl-dev unzip  
   - dnvm upgrade -r coreclr  
   - dnu restore
 script:
