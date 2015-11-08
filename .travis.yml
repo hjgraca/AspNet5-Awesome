@@ -8,7 +8,7 @@ install:
   - sudo apt-get install libunwind8 libssl-dev unzip
   - curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.sh
   - dnvm install latest -r coreclr
-  - dnvm install default -r mono  
+  - dnvm install latest -r mono  
   - dnu restore
 script:
   - dnx /home/travis/build/hjgraca/AspNet5-Awesome/test/AspNet5-Awesome.Tests/project.json test
