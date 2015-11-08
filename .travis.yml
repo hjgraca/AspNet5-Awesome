@@ -4,7 +4,9 @@ mono:
   - latest
 install:
   - curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.sh
-  - sudo apt-get install libunwind8 gettext libssl-dev libcurl3-dev zlib1g libicu-dev unzip
+  - sudo add-apt-repository -y ppa:yjwong/libunwind
+  - sudo apt-get -y update
+  - sudo apt-get install libunwind8 libssl-dev unzip  
   - dnvm upgrade -r coreclr  
   - dnu restore
 script:
