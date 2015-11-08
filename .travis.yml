@@ -1,5 +1,5 @@
 language: CSharp
-sudo: required
+sudo: false
 mono:
   - latest
 install:
@@ -10,4 +10,4 @@ install:
   - dnvm upgrade -r coreclr  
   - dnu restore
 script:
-  - dnx AspNet5-Awesome/test/AspNet5-Awesome.Tests/project.json test
+  - dnx /home/travis/build/hjgraca/AspNet5-Awesome/test/AspNet5-Awesome.Tests/project.json test
