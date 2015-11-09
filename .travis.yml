@@ -1,20 +1,12 @@
 language: csharp
 sudo: false
-env:
-  - MONO_THREADS_PER_CPU=2000 MONO_MANAGED_WATCHER=disabled
-mono:
-  - beta
-os:
-  - linux
-  - osx
-
-addons:
-  apt:
-    packages:
-    - libunwind8
-    
-before_install:
-  - if test "$TRAVIS_OS_NAME" == "osx"; then brew update; brew install icu4c; fi
+install:
+  - curl -sSL https://github.com/libuv/libuv/archive/v1.4.2.tar.gz | tar zxfv - -C /tmp && cd /tmp/libuv-1.4.2/
+  - sh autogen.sh
+  - ./configure --prefix=$HOME/libuvinstall
+  - make
+  - make install
+  - export LD_LIBRARY_PATH="$HOME/libuvinstall/lib"
+  - cd $OLDPWD
 script:
   - ./build.sh --quiet verify
-  - dnx -p test/AspNet5-Awesome.Tests/project.json test
