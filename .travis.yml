@@ -1,12 +1,15 @@
 language: csharp
-sudo: false
+#sudo: required
+mono:
+  - latest
+  
 install:
-  - curl -sSL https://github.com/libuv/libuv/archive/v1.4.2.tar.gz | tar zxfv - -C /tmp && cd /tmp/libuv-1.4.2/
-  - sh autogen.sh
-  - ./configure --prefix=$HOME/libuvinstall
-  - make
-  - make install
-  - export LD_LIBRARY_PATH="$HOME/libuvinstall/lib"
-  - cd $OLDPWD
+  #- sudo add-apt-repository -y ppa:yjwong/libunwind
+  #- sudo apt-get -y update
+  #- sudo apt-get install libunwind8 libssl-dev unzip
+  - curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.sh
+  - dnvm upgrade -r coreclr  
+  - dnu restore
 script:
-  - ./build.sh --quiet verify
+  - dnu build test/AspNet5-Awesome.Tests/
+  - dnx -p test/AspNet5-Awesome.Tests/project.json test
