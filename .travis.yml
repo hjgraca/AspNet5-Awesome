@@ -1,7 +1,6 @@
 language: csharp
 sudo: required
-mono:
-  - beta
+dist: trusty
   
 install:
   - sudo add-apt-repository -y ppa:yjwong/libunwind
