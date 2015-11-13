@@ -18,6 +18,7 @@ namespace AspNet5_Awesome.Controllers
 
         public IActionResult Index()
         {
+            ViewData["Hello"] = "Hello";
             return View();
         }
 

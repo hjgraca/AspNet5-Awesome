@@ -10,6 +10,8 @@
   },
 
   "dependencies": {
+    "AspNet5-Awesome.Data": "1.0.0-*",
+    "AspNet5-Awesome": "1.0.0-*",
     "xunit": "2.1.0",
     "xunit.runner.dnx": "2.1.0-beta6-build191"
   },
