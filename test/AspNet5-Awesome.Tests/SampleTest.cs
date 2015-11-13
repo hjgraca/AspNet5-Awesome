@@ -12,11 +12,5 @@ namespace AspNet5_Awesome.Tests
         {
         	Assert.True(true);
         }
-        
-        [Fact]
-        public void Test2()
-        {
-        	Assert.True(false);
-        }
     }
 }
